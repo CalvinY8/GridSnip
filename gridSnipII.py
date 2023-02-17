@@ -1,8 +1,3 @@
-
-
-from PIL.ImageQt import ImageQt
-
-import tkinter
 from tkinter import filedialog
 
 import time
@@ -26,7 +21,8 @@ class clearWindow(QMainWindow):
         super().__init__()
 
         #after showFullScreen(), make transparent
-        self.setStyleSheet("background:transparent")
+        #self.setStyleSheet("background:transparent")
+        self.setWindowFlags(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
 
         #init instance variables self.begin and self.end as qpoints
@@ -99,27 +95,14 @@ class clearWindow(QMainWindow):
         self.end = event.pos()
         self.update()
 
-        self.close() #hide fullscreenwindow, hdiing the grid before taking screenshot
+        self.close() #hide fullscreenwindow, hiding the grid before taking screenshot
 
         time.sleep(0.5) #need to wait for close() operation
 
         img=ImageGrab.grab(bbox = self.rectangle.getCoords()) #bbox = bounding box
 
-        #Qpixmap_img = self.convert_PIL_to_Qpixmap(img)
-
-        #a Qgraphicsview is required to attach widgets
-        #myrotateWidget will create a new window with a Qgraphicsview
-        # self.myrotateWidget = rotateWidget(Qpixmap_img) #this only works if you use 'self'
-        # self.myrotateWidget.show()
-
         img.show()
         self.save_img(img)
-        
-    def convert_PIL_to_Qpixmap(self, img):
-        #https://stackoverflow.com/questions/34697559/pil-image-to-qpixmap-conversion-issue
-        qim = ImageQt(img)
-        pix = QPixmap.fromImage(qim)
-        return pix
 
     def save_img(self, img):
         #bring up the save dialogue
