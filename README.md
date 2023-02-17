@@ -1,5 +1,4 @@
 # GridSnip<br>
-https://youtu.be/xxKV9WhPVyE<br>
 
 take screenshots of reference images for 3D modelling<br>
 
