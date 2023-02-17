@@ -21,9 +21,6 @@ class clearWindow(QMainWindow):
     #snipping tool, driver class with main function
     #This class is used to generate a transparent window
     #the user then drags a rectangular area that they wish to snip, from which we extract the upper left and bottom right coordinate points
-    #using cropIt.py, a screenshot is taken of the entire window
-    #the coordinate data is then used to crop the screenshot
-    #giving the illusion the user has taken a snip of the screen
 
     def __init__(self):
         super().__init__()
