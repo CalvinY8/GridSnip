@@ -1,5 +1,5 @@
 # GridSnip<br>
-demo: https://youtu.be/xxKV9WhPVyE
+demo: https://youtu.be/xxKV9WhPVyE <br>
 ---problem<br>
 When 3d modelling, it is common to use orthographic reference images.<br>
 It is convenient to make certain images symmetrical (ex: front view, back view, eyeball).<br>
